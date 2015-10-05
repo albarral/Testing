@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <logicalFolder name="t3" displayName="t3" projectFiles="true">
+          <itemPath>src/t3/chip.cpp</itemPath>
+          <itemPath>src/t3/chip.h</itemPath>
+          <itemPath>src/t3/chip.pro</itemPath>
+          <itemPath>src/t3/images.qrc</itemPath>
+          <itemPath>src/t3/main.cpp</itemPath>
+          <itemPath>src/t3/mainwindow.cpp</itemPath>
+          <itemPath>src/t3/mainwindow.h</itemPath>
+          <itemPath>src/t3/view.cpp</itemPath>
+          <itemPath>src/t3/view.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <modules>core gui widgets</modules>
+      </qt>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>QT_NO_OPENGL</Elem>
+          </preprocessorList>
+        </ccTool>
+      </compileType>
+      <item path="src/t3/chip.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/chip.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/chip.pro" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/images.qrc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/mainwindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/mainwindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/view.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/view.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="4">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <qt>
+        <buildMode>1</buildMode>
+        <modules>core gui widgets</modules>
+      </qt>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="src/t3/chip.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/chip.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/chip.pro" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/images.qrc" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/mainwindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/mainwindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/t3/view.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/t3/view.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
