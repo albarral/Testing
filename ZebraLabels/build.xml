@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<!-- By default, only the Clean and Build commands use this build script. -->
+<!-- Commands such as Run, Debug, and Test only use this build script if -->
+<!-- the Compile on Save feature is turned off for the project. -->
+<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
+<!-- in the project's Project Properties dialog box.-->
+<project name="ZebraLabels" default="app-deploy" basedir=".">
+	<description>Builds, tests, and runs the project ZebraLabels.</description>
+	<import file="nbproject/build-impl.xml"/>
+
+<!--   -->
+	<target name="app-base-env">
+		<property name="localBin.dir" value="local/bin"/>
+		<property name="localUtils.dir" value="local/utils"/>
+		<property name="targetConf.filename" value="targetConf.properties"/>
+		<property name="deployEnv.filename" value="deployEnv.properties"/>
+		<property name="targetConf.file" value="${localUtils.dir}/${targetConf.filename}"/>
+		<property name="deployEnv.file" value="${localUtils.dir}/${deployEnv.filename}"/>
+	</target>
+	<target name="app-deploy-env" depends="app-base-env">
+		<property file="${deployEnv.file}"/>
+	</target>
+<!--   -->
+
+	<target name="app-confGen" depends="app-proj-config-default">
+		<delete dir="${localBin.dir}"/>
+		<mkdir dir="${localBin.dir}"/>
+		<filter filtersfile="${targetConf.file}"/>
+		<copy todir="${localBin.dir}" filtering="true"><fileset dir="bcfg"/></copy>
+		<copy todir="${localBin.dir}"><fileset dir="bin"/></copy>
+	</target>
+	<target name="-pre-compile" depends="app-confGen"/>
+
+	<target name="app-deploy" depends="jar,app-deploy-env">
+		<copy todir="${zebralabels.deploy.dir}/bin"><fileset dir="${localBin.dir}"/></copy>
+		<copy file="${dist.jar}" todir="${zebralabels.deploy.dir}/lib"/>
+                                     <copy todir="${zebralabels.deploy.dir}/lib"><fileset dir="lib" includes="*.jar"/></copy>
+		<mkdir dir="${zebralabels.deploy.dir}/logs"/>
+	</target>
+
+	<target name="app-clean" depends="app-deploy-env,clean">
+		<delete>
+			<fileset dir="${zebralabels.deploy.dir}/logs" includes="*.*"/>
+		</delete>
+	</target>
+
+	<target name="app-test-proj-config-default" depends="app-base-env">
+		<condition property="skipTarget.appProjConfigDefault">
+			<and>
+				<available file="${deployEnv.file}"/>
+				<available file="${targetConf.file}"/>
+			</and>
+		</condition>
+	</target>
+
+	<target name="app-proj-config-default" depends="app-test-proj-config-default" unless="skipTarget.appProjConfigDefault">
+		<mkdir dir="${localBin.dir}"/>
+		<mkdir dir="${localUtils.dir}"/>
+		<copy file="utils/${deployEnv.filename}.SAMPLE" tofile="${deployEnv.file}"/>
+		<copy file="utils/${targetConf.filename}.SAMPLE" tofile="${targetConf.file}"/>
+	</target>
+
+</project>

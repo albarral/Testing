@@ -1,0 +1,7 @@
+INFO main zebralabels.ZebraLabels - >>>>>>>>>>>>
+INFO main zebralabels.ZebraLabels - Starting ZebraLabels v1.1-Peru ...
+INFO main zebralabels.ZebraLabels - Reading config file: local/bin/admin.cfg
+INFO main zebralabels.ZebraLabels - Log4j config file: ZebraLabels-log4j.xml
+INFO AWT-EventQueue-0 zebralabels.LabelPrinter - Buscando servicio de impresión ...
+DEBUG AWT-EventQueue-0 zebralabels.LabelPrinter - PSC-1500-series
+ERROR AWT-EventQueue-0 zebralabels.LabelPrinter - Servicio de impresión para Zebra no encontrado!
